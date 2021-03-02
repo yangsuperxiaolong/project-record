@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Configuration status="warn" name="MyApp">
+    <Appenders>
+        <JMS name="jmsQueue" destinationBindingName="logTestQueue"
+             factoryBindingName="QueueConnectionFactory">
+            <JsonLayout properties="true"/>
+        </JMS>
+    </Appenders>
+    <Loggers>
+        <Root level="error">
+            <AppenderRef ref="jmsQueue"/>
+        </Root>
+    </Loggers>
+</Configuration>
